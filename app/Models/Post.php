@@ -25,4 +25,13 @@ class Post extends Model
     {
         return $this->hasMany('Image::class','post_id');
     }
+    public function sluggable():array
+    {
+        return[
+        'slug' =>[
+        'source'=>'title',
+        ]
+        ];
+    }
+
 }
