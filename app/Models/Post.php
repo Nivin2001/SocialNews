@@ -11,19 +11,19 @@ class Post extends Model
     protected $guarded=[];
     public function category()
     {
-        return $this->belongsTo('Category::class','Category_id');
+        return $this->belongsTo(Category::class,'Category_id');
     }
     public function user()
     {
-        return $this->belongsTo('User::class','user_id');
+        return $this->belongsTo(User::class,'user_id');
     }
     public function comments()
     {
-        return $this->hasMany('Comment::class','post_id');
+        return $this->hasMany(Comment::class,'post_id');
     }
     public function images()
     {
-        return $this->hasMany('Image::class','post_id');
+        return $this->hasMany(Image::class,'post_id');
     }
     public function sluggable():array
     {
